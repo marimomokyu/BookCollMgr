@@ -13,6 +13,7 @@ class Activity_List : AppCompatActivity() {
 
     //変更・修正画面への遷移。最終的にはリストをタップで遷移するようにする予定。
     //今は単純にボタンタップで遷移するようにする
+    //
     //TODO 値の受け渡しとかもここでやる必要ありそう
     fun onChangeButtonTapped(view: View?){
         val intent = Intent(this, Activity_Change::class.java)
