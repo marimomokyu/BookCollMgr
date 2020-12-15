@@ -4,11 +4,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
 import android.view.View
+import io.realm.Realm
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var realm: Realm
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        realm = Realm.getDefaultInstance()
+
     }
 
     // 本 登録ボタンタップ時
@@ -28,6 +32,11 @@ class MainActivity : AppCompatActivity() {
     fun onGraphButtonTapped(view: View?){
         val intent = Intent(this, Activity_Graph::class.java)
         startActivity(intent)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        realm.close()
     }
 
 }
