@@ -39,6 +39,6 @@ class MainActivity : AppCompatActivity() {
         realm.close()
     }
 
-    //0215テスト
+    //
 
 }
