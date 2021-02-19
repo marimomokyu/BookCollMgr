@@ -9,3 +9,5 @@ class Activity_Change : AppCompatActivity() {
         setContentView(R.layout.activity__change)
     }
 }
+
+//テスト
