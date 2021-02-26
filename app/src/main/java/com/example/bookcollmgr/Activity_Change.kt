@@ -10,4 +10,4 @@ class Activity_Change : AppCompatActivity() {
     }
 }
 
-//テスト
+//テスト2月20日
