@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/dateText"
         android:layout_width="98dp"
         android:layout_height="20dp"
         android:layout_marginTop="32dp"
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/bookNameText"
+        android:id="@+id/BookNameText"
         android:layout_width="242dp"
         android:layout_height="22dp"
         android:layout_marginTop="52dp"
