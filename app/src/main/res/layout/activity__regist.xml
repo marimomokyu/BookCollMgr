@@ -6,12 +6,80 @@
     android:layout_height="match_parent"
     tools:context=".Activity_Regist">
 
+    <EditText
+        android:id="@+id/bookNameedit4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="261dp"
+        android:layout_marginEnd="109dp"
+        android:layout_marginBottom="297dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="出版社"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/bookNameedit3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="217dp"
+        android:layout_marginEnd="109dp"
+        android:layout_marginBottom="341dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="購入日"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/bookNameedit2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="127dp"
+        android:layout_marginEnd="109dp"
+        android:layout_marginBottom="431dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="著者"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/bookNameedit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="172dp"
+        android:layout_marginEnd="109dp"
+        android:layout_marginBottom="386dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="価格"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="71dp"
-        android:text="本 登録画面"
+        android:layout_marginStart="191dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="192dp"
+        android:layout_marginBottom="556dp"
+        android:text="登録"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,29 +89,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="92dp"
-        android:layout_marginTop="78dp"
+        android:layout_marginTop="82dp"
         android:layout_marginEnd="109dp"
-        android:layout_marginBottom="390dp"
+        android:layout_marginBottom="476dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="タイトル"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/saveBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="173dp"
-        android:layout_marginTop="109dp"
-        android:layout_marginEnd="145dp"
-        android:layout_marginBottom="233dp"
-        android:text="Button"
+        android:layout_marginStart="151dp"
+        android:layout_marginTop="413dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginBottom="142dp"
+        android:text="リスト登録"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BookNameedit" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
