@@ -4,19 +4,30 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
 import android.view.View
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import io.realm.Realm
-import io.realm.Sort
-import kotlinx.android.synthetic.main.activity__list.*
+import android.widget.ArrayAdapter
+import android.widget.ListView
+import android.widget.TextView
+import android.widget.Toast
 
 class Activity_List : AppCompatActivity() {
-    private lateinit var realm: Realm
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity__list)
+
+        val arraybook = Array(20) { i -> "Title-$i" }
+
+        val listView = findViewById<ListView>(R.id.booklist)
+
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, arraybook)
+
+        listView.adapter = adapter
+
+        listView.setOnItemClickListener { adapterView, view, position, id ->
+            val textView = view.findViewById<TextView>(android.R.id.text1)
+            Toast.makeText(this, "Clicked: ${textView.text}", Toast.LENGTH_SHORT).show()
+        }
     }
+
 
 
     //変更・修正画面への遷移。最終的にはリストをタップで遷移するようにする予定。
