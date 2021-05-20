@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
 
-</androidx.constraintlayout.widget.LinearLayout>
+
+    <TextView
+        android:id="@+id/datetext"
+        android:layout_width="84dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/titletext"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/titletext"
+        android:layout_width="268dp"
+        android:layout_height="34dp"
+        app:layout_constraintStart_toEndOf="@+id/datetext"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/authortext"
+        android:layout_width="114dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titletext" />
+
+    <TextView
+        android:id="@+id/pricetext"
+        android:layout_width="64dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toEndOf="@+id/authortext"
+        app:layout_constraintTop_toBottomOf="@+id/titletext" />
+
+    <TextView
+        android:id="@+id/publishertext"
+        android:layout_width="88dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pricetext"
+        app:layout_constraintTop_toBottomOf="@+id/titletext" />
+</androidx.constraintlayout.widget.ConstraintLayout>

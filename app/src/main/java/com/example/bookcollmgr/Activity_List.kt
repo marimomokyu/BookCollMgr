@@ -4,31 +4,44 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
 import android.view.View
-import android.widget.ArrayAdapter
-import android.widget.ListView
-import android.widget.TextView
-import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import io.realm.Realm
+import io.realm.kotlin.where
+import kotlinx.android.synthetic.main.activity__list.*
 
 class Activity_List : AppCompatActivity() {
+    private lateinit var realm: Realm
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity__list)
+        realm = Realm.getDefaultInstance()
 
-        val arraybook = Array(20) { i -> "Title-$i" }
+        // データ削除
+        //deleteRealm()
 
-        val listView = findViewById<ListView>(R.id.booklist)
+        val bookList = realm.where<hasBook>().findAll()
 
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, arraybook)
+        val adapter = ListAdapter(this, bookList,true)
 
-        listView.adapter = adapter
-
-        listView.setOnItemClickListener { adapterView, view, position, id ->
-            val textView = view.findViewById<TextView>(android.R.id.text1)
-            Toast.makeText(this, "Clicked: ${textView.text}", Toast.LENGTH_SHORT).show()
-        }
+        recyclerView.setHasFixedSize(true)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = adapter
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        realm.close()
+    }
 
+    private fun deleteRealm() {
+        val target = realm.where<hasBook>().findAll()
+
+        // トランザクションして削除
+        realm.executeTransaction {
+            target.deleteFromRealm(0)
+        }
+    }
 
     //変更・修正画面への遷移。最終的にはリストをタップで遷移するようにする予定。
     //今は単純にボタンタップで遷移するようにする
